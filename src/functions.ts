@@ -29,7 +29,9 @@
 
 function yelling(words: string[]): string[] {
   // Replace the code below with your own code
-  return []
+
+  const upperCase = words.map(word => word.toUpperCase())
+  return upperCase
 }
 
 /**
@@ -44,7 +46,8 @@ function yelling(words: string[]): string[] {
 
 function doubleTrouble(numbers: number[]): number[] {
   // Replace the code below with your own code
-  return []
+  const doubled = numbers.map(someNumber => someNumber * 2)
+  return doubled
 }
 
 /*
@@ -58,7 +61,10 @@ function doubleTrouble(numbers: number[]): number[] {
 
 function stringyIndexes(strings: string[]): string[] {
   // Replace the code below with your own code
-  return []
+  const stringAtIndex = strings.map(
+    (current, index) => current + ' is at index ' + index
+  )
+  return stringAtIndex
 }
 
 /*
@@ -71,7 +77,8 @@ function stringyIndexes(strings: string[]): string[] {
 
 function onlyTheEvenSurvive(numbers: number[]): number[] {
   // Replace the code below with your own code
-  return []
+  const evenNumbers = numbers.filter(numb => numb % 2 === 0)
+  return evenNumbers
 }
 
 /*
@@ -84,7 +91,8 @@ function onlyTheEvenSurvive(numbers: number[]): number[] {
 
 function onlyTheEvenIndexedSurvive(numbers: number[]): number[] {
   // Replace the code below with your own code
-  return []
+  const evenIndexed = numbers.filter((number, index) => index % 2 === 0)
+  return evenIndexed
 }
 
 /*
@@ -109,9 +117,13 @@ type Movie = {
   year: number
   score: number
 }
-function bestMoviesOfTheYear(movieObjectArray: Movie[], year: number): string[] {
-  // Replace the code below with your own code
-  return []
+function bestMoviesOfTheYear(
+  movieObjectArray: Movie[],
+  year: number
+): string[] {
+  return movieObjectArray
+    .filter(movie => movie.year === year && movie.score > 90)
+    .map(movie => movie.name)
 }
 
 /*
@@ -125,7 +137,8 @@ function bestMoviesOfTheYear(movieObjectArray: Movie[], year: number): string[] 
 
 function everyoneIsOdd(numbers: number[]): boolean {
   // Replace the code below with your own code
-  return false
+  const isItOdd = numbers.every(number => number % 2 != 0)
+  return isItOdd
 }
 
 /*
@@ -139,7 +152,7 @@ function everyoneIsOdd(numbers: number[]): boolean {
 
 function findTheNeedle(strings: string[]): string {
   // Replace the code below with your own code
-  return ''
+  return strings.find(string => string.includes('needle')) || ''
 }
 
 /*
@@ -153,7 +166,7 @@ function findTheNeedle(strings: string[]): string {
 
 function findTheNeedleIndex(strings: string[]): number {
   // Replace the code below with your own code
-  return 42
+  return strings.findIndex(string => string.includes('needle'))
 }
 
 /*
