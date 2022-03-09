@@ -180,7 +180,7 @@ function findTheNeedleIndex(strings: string[]): number {
 
 function someoneToLove(strings: string[]): boolean {
   // Replace the code below with your own code
-  return false
+  return strings.some(string => string.length === 4)
 }
 
 /*
@@ -219,9 +219,13 @@ function someoneToLove(strings: string[]): boolean {
 type Hobbies = Record<string, { title: string; description: string }>
 function objectKeys(objectOfHobbies: Hobbies): string[] {
   // Replace the code below with your own code
-  return []
+  return Object.keys(objectOfHobbies).map(
+    object => `${object} - ${objectOfHobbies[object].title}`
+  )
 }
 
+// return Object.keys(objectOfHobbies).map(
+//   object => `${object} - ${objectOfHobbies[object].title}`
 /**
  *
  *                            STOP
